@@ -1,0 +1,92 @@
+{%  extends 'layout.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{%  block PageMenu %}
+      <!--   MENU SIDEBAR-->
+       <!--   MENU SIDEBAR-->
+  <!--      <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href= {{ url_for('radio') }}>
+                   <div> <h3>{{  app_name }}</h3></div>
+                </a>
+            </div>
+            
+        </aside>-->
+      <!--  END MENU SIDEBAR-->
+{% endblock PageMenu %}
+
+{% block PageHeading %}
+
+                <a href="{{ url_for('upload_dictionary') }}">
+                   <div> <h3> << BACK </h3></div>
+                </a>
+    <h2>Select your Domains for Analysis</h2>
+{% endblock PageHeading %}
+
+
+{% block PageContent %}
+<div class="main-content">
+<form id="formshower" method="POST" action= "/radio" enctype="multipart/form-data">
+
+        <label class="cnt">
+            <input type="checkbox"  value="Yes" name="myselect">
+            <span class="checkmark"></span>
+        </label>
+
+      <!--  <label class="cnt">No
+            <input type="checkbox"  value="No" name="myselect">
+            <span class="checkmark"></span>
+        </label>-->
+    </form>
+
+    <form name="Yes" method="POST" action= "/radio" enctype="multipart/form-data" id="Yes" style="display:none">
+        {% for i in range(le) %}
+		    <label class="cnt">{{ dm_names[i] }}
+                <input type="checkbox"  value="{{ dm_names[i] }}" name="mycheckbox">
+		        <span class="checkmark"></span>
+		    </label>
+	    {% endfor %}
+        <input class="btn-get" type="submit" value="Submit"/>
+    </form><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <!--<form name="No" action= "/radio" id="No" style="display:none">
+        <p> The Following are the Domains in your Dictionary</p><br>
+        {% for i in range(le) %}
+            <p>{{ dm_names[i] }}</p><br>
+        {% endfor %}
+        <input class="btn-get" type="submit" value="Continue"/>
+    </form>-->
+
+    <style>
+.main-content {
+    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    input[type=submit] {
+      background-color: rgb(12, 46, 138);
+      color: white;
+      padding: 8px;
+      font-size: 20px;
+      position: absolute;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      float: right;
+
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+
+ </style>
+</div>
+
+<script>
+                $('input[type="checkbox"]').on("change", function() {
+                    $("#" + $(this).val()).show().siblings().hide();
+                })
+</script>
+
+{% endblock PageContent %}

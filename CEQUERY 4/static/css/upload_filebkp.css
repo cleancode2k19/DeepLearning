@@ -1,0 +1,63 @@
+table#holder {
+   
+    
+    width: 500px;
+    height: 100px;
+    margin-left: 500px;
+    margin-top: 250px;
+    font-family: Verdana, serif;
+    BACKGROUND-COLOR: #f8f9fa4f;
+}
+table#holder tr:first-child {
+    height:50px;
+    text-align:center;
+}
+table#holder tr:last-child {
+   height:100px;
+   line-height: 50px;
+   margin-left:10px;
+   text-align:center;
+}
+table#holder li img {
+    height: 30px;
+	text-align:center;
+}
+
+ul {
+  list-style: none;
+}
+
+a.button{
+  background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	margin-left: 385px;
+	margin-top: 20px;
+
+  -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+
+}
+input[type="file"] { width: 90%;
+    height: 30px;
+	display:flex;
+	background-color: #33d2cc59;
+    font-size: 20px;
+	    margin-left: 0%;
+}
+a.button:hover{
+  background: #149174;
+	color: #0C5645;
+}
+a.button:active{
+  border:0;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+
+    <!-- Title Page-->
+    <title>{{ title }}</title>
+
+        <!-- Bootstrap CSS-->
+    <!-- <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="/static/vendor/animsition/animsition.min.js"></script>
+    <link href="/static/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <script src="/static/vendor/chartjs/Chart.bundle.min.js"></script>
+    <link href="/static/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+
+
+    <!-- Vendor CSS-->
+
+    <!-- <link href="/static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/slick/slick.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"> -->
+
+    <!-- Main CSS-->
+    <link href="/static/css/theme.css" rel="stylesheet" media="all">
+    <!-- CSS Specific to this file -->
+    <link href="/static/css/upload_file.css" media="all" rel="stylesheet">
+
+
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <!--<div class="logo">
+                <a href="/">
+                    <h3>{{  app_name }}</h3>
+                </a>
+            </div>-->
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active">
+                            <a href= {{ upload_file }}>
+                                <i class="fas fa-copy"></i>Upload File</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                         <h2>Upload File</h2>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <p >
+	                        {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+		                            <ul class=flashes>
+                                        {% for message in messages %}
+                                            <li class="alert alert-primary">{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
+                        </p>
+                        <div>
+                            <form method="post" action= "/" enctype="multipart/form-data"  >
+                                <table id="holder">
+                                    <tr>
+                                        <td><input type="file" name="file" autocomplete="off" required></td>
+                                    </tr>
+                                    <!-- Skipping this file drag and drop feature for the moment, will come back to this later -->
+                                    <!-- <tr>
+                                        <td><ul id="fileList"></ul></td>
+                                    </tr>
+                                    -->
+                                    <tr>
+                                        <td>
+                                            <input class="btn btn-primary" type="submit" value="Upload">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+        </div>
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+</body>
+
+
+
+<script src="/static/js/main.js"></script>
+<!-- Skipping this file drag and drop feature for the moment, will come back to this later -->
+<!-- <script src="/static/js/uploadFile.js"></script> -->
+
+</html>
+<!-- end document-->
+

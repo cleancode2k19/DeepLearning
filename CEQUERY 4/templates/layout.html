@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags-->
+
+    <!-- Title Page-->
+    <title>
+      {% block title %}{% endblock title %}
+        VOXPOPULI</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS-->
+    <!-- <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> -->
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="/static/vendor/animsition/animsition.min.js"></script>
+    <link href="/static/css/font-face.css" rel="stylesheet" media="screen and (min-width: 600px)">
+    <link href="/static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="screen and (min-width: 600px)">
+    <link href="/static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="screen and (min-width: 600px)">
+    <link href="/static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="screen and (min-width: 600px)">
+    <script src="/static/vendor/chartjs/Chart.bundle.min.js"></script>
+    <link href="/static/vendor/animsition/animsition.min.css" rel="stylesheet" media="screen and (min-width: 600px)">
+
+    <!-- Vendor CSS-->
+
+    <!-- <link href="/static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/slick/slick.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"> -->
+
+    <!-- Main CSS-->
+    <link href="/static/css/style1.css" rel="stylesheet" media="screen and (min-width: 600px)">
+    <!-- CSS Specific to this file -->
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <link href="/static/css/upload_dictionary.css" media="all" rel="stylesheet" media="screen and (min-width: 600px)">
+    <script type="text/javascript" src="static/js/main.js"></script>
+	<link href="/static/css/radio.css" media="all" rel="stylesheet">
+    <link href="/static/css/upload_file.css" media="all"rel="stylesheet" media="screen and (min-width: 600px)">
+    <script type="text/javascript" src="static/js/main.js"></script>
+      <script type="text/javascript" src="static/js/main1.js"></script>
+    <script type="text/javascript" src="static/js/displayGraphonHoover.js"></script>
+    <script type="text/javascript" src="static/js/displayGraphs.js"></script>
+
+  <!-- Template Main JS File -->
+
+    <style>
+  
+
+     .main-content {
+    background-color: #FFFFFF;
+       background-repeat: no-repeat;
+       background-size: cover;
+     }
+
+     #chart-title {
+      color: black;
+     }
+
+    }
+    </style>
+  </head>
+
+  <body class="">
+    <div class="page-wrapper">
+      <!-- HEADER MOBILE-->
+
+      <!-- END HEADER MOBILE-->
+      {% block declareVarFromServer %}{% endblock declareVarFromServer %}
+      {% block PageMenu %}{% endblock PageMenu %}
+      <!-- PAGE CONTAINER-->
+      <div class="page-container">
+        <!-- HEADER DESKTOP-->
+       <header class="header-desktop">
+          <div class="section__content section__content--p30">
+            <div class="container-fluid">
+              <div class="header-wrap">
+                {% block PageHeading %}{% endblock PageHeading %}
+              </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+        {% block PageContent %}{% endblock PageContent %}
+        {% block bodyservice %}{% endblock bodyservice %}
+      </div>
+      <!-- END PAGE CONTAINER-->
+    </div>
+	 
+  </body>
+
+</html>
+<!-- end document-->

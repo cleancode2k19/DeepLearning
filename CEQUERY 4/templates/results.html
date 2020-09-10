@@ -1,0 +1,223 @@
+{%  extends 'layout.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block declareVarFromServer %}
+      <script type="text/javascript">
+        var overall = {{ overall | safe }};
+        var l = {{ l | safe }};
+        {% for i in range(k) %}
+        {{ l[i].update({'chartTitle' : l_t[i]}) }}
+        {% endfor %}
+     </script>
+{% endblock declareVarFromServer %}
+
+{%  block PageMenu %}
+<header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="../">VOX<span>POPULI</span></a></h1>
+      </div>
+          <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="../">HOME</a></li>
+
+
+                         <li>
+                            <a href= {{ url_for('upload_dictionary') }}>
+                                Dictonary File </a>
+                        </li>
+
+                        <li>
+                            <a href= {{ url_for('upload_file') }}>
+                                Comments File </a>
+                        </li>
+                        <li>
+                            <a href='#' onclick='displayGraphs(overall, {});'>
+                                Domains</a>
+                        </li>
+                        <li>
+                            <a href='/download_output/' target="_blank">
+                                Download Output</a>
+                        </li>
+            <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                Sub-Domains</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                {% for i in range(k) %}
+                                    <li>
+                                        <a href="#" onclick='displayGraphs( {{ l[i] }} );'> {{ l_t[i] }} </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+            </ul>
+      </nav>
+
+    </div>
+</header>
+
+        <!-- END MENU SIDEBAR-->
+{% endblock PageMenu %}
+{% block PageHeading %}
+
+{% endblock PageHeading %}
+{% block PageContent %}
+            <!-- MAIN CONTENT-->
+                <div class="main-content">
+                <div class="section__content section__content--p30">
+                   <!-- <div class="container-fluid"> -->
+                       <div class="section-header">
+        <h2>RESULTS</h2></div>
+                        <script>
+                                $(function()
+                                {
+                                  $('select').selectpicker();
+                                });
+                                </script>
+                                <form name="fuc" method="POST" action= "/results" enctype="multipart/form-data" id="fuc" >
+                                    <div style="display:flex; align-items: center; flex-direction: row; justify-content: flex-start">
+                                        &nbsp;&nbsp;&nbsp;<p> <strong>Select a domain or multiple domains to apply the filter:    </strong></p>&nbsp;&nbsp;&nbsp; <br/>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                    <select class="selectpicker" name="fu" multiple data-live-search="true" id="fu">
+                                    {% for i in range(le) %}
+                                        <option value="{{ dm_names[i] }}">{{ dm_names[i] }}</option>
+                                    {% endfor %}
+                                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input  class="btn-get1" type="submit" value="Apply"/>
+                                    </div>
+
+                                </form>
+
+  <!--<button class="btn-get2" type="submit" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">CHECK FOR RESULTS</button>
+
+  div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>-->
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openCity('London')">ANALYSIS</button>
+  <button class="w3-bar-item w3-button" onclick="openCity('Paris')">INDEX</button>
+  <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">DASHBOARD</button>
+</div>
+  <div id="London" class="w3-container city">
+  <h3>ANALYSIS</h3>
+
+
+        <div id ='asrith'> </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div style="width: 100%;" class="au-card m-b-30">
+                                    <div style="width:100%;" class="au-card-inner" id = "graph-container">
+                                        <h3 id="chart-title"></h3>
+                                        <canvas id="barChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="removeGraph" class="col-lg-6">
+                              <div style="width: 100%;" class="au-card m-b-30">
+                                  <div style="width:100%;" class="au-card-inner" id = "graph-hoover-container">
+                                      <h3 id="chart-title"></h3>
+                                      <canvas id="hooverbarChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div style="width: 100%;" class="au-card m-b-30">
+                                    <div  class="au-card-inner" id = "doughnut-container">
+                                        <canvas id="doughnutChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<div id="Paris" class="w3-container city" style="display:none">
+  <h3>INDEX</h3>
+  <p>under construction.</p>
+</div>
+
+<div id="Tokyo" class="w3-container city" style="display:none">
+  <h3>DASHBORD</h3>
+  <p>under construction.</p>
+</div>
+
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "block";
+}
+</script>
+
+            </div>
+      </div>
+
+
+
+   <!-- </div>
+  </div>
+</div>-->
+
+
+
+            <!-- END MAIN CONTENT-->
+        <script type = "text/javascript">
+            displayGraphs(overall)
+            
+        </script>
+<style>
+
+    .p {
+    display: inline-block;
+    width: 50%;
+}
+    .select_category{
+  outline: none;
+  height: 50px;
+  line-height: 50px;
+  padding:0px 20px;
+}
+
+    .btn-get1 {
+      background-color: rgb(12, 46, 138);
+      color: white;
+      padding: 8px;
+      font-size: 20px;
+      position: absolute;
+      border: none;
+      border-radius: 3px;
+      margin-left: 50%;
+      cursor: pointer;
+      float: right;
+
+    }
+
+    btn-get1:hover {
+      background-color: #45a049;
+    }
+.w3-btn, .w3-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+</style>
+
+{% endblock PageContent %}
+

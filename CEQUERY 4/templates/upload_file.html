@@ -1,0 +1,85 @@
+{%  extends 'layout.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{%  block PageMenu %}
+        <!-- MENU SIDEBAR-->
+       <!-- <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="/">
+                    <h3>{{  app_name }}</h3>
+                </a>
+            </div>
+        </aside>-->
+        <!-- END MENU SIDEBAR-->
+{% endblock PageMenu %}
+{% block PageHeading %}
+                <a href={{ url_for('upload_dictionary') }}>
+<div> <h3> << Dictionary File</h3></div></br></div>
+                </a>
+{% endblock PageHeading %}
+{% block PageContent %}
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="item">
+                        <div>
+                            <form method="post" action= "/uploader" enctype="multipart/form-data"  >
+											<h2> Drop Comments File Here</h2>
+							<style>
+							.new{
+							font-size: 1.5rem;
+							}
+
+element.style {
+    background-color: #f8f9fa;
+}
+							</style>
+							</br>
+							</br>
+								<input type="file" name="file" autocomplete="off" accept=".xls,.xlsx" required>
+                                    
+                                    <!-- Skipping this file drag and drop feature for the moment, will come back to this later -->
+                                    <!-- <tr>
+                                        <td><ul id="fileList"></ul></td>
+                                    </tr>
+                                    -->
+                                        </br></br>    <input class="btn-get" type="submit" value="Upload">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<style>
+input[type="file"] {
+ width: 30%;
+    height: 35px;
+	display:flex;
+	background-color: #33d2cc59;
+    font-size: 20px;
+	    margin-left: 0%;
+}
+a.button:hover{
+  background: #149174;
+	color: #0C5645;
+}
+a.button:active{
+  border:0;
+}
+
+    input[type=submit] {
+      background-color: rgb(12, 46, 138);
+      color: white;
+      padding: 8px;
+      font-size: 20px;
+      position: absolute;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      float: right;
+
+    }
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+</style>
+<!-- END MAIN CONTENT-->
+{% endblock PageContent %}

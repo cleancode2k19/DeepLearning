@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+
+  <title>VOXpopuli</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor1/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor1/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../static/vendor1/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/vendor1/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/vendor1/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/vendor1/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/vendor1/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style1.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal - v2.1.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
+<body></body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="../">VOX<span>POPULI</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="../">HOME</a></li>
+          <li><a href="#about">ANALYZE</a></li>
+          <li><a href="#services">TECHNOLOGY</a></li>
+			<li><a href="#clients">DEMO</a></li>
+		 <li><a href="#testimonials">ABOUT</a></li>
+     <li class="menu-has-children"><a>Clear Folder</a>
+            <ul>
+              <li><a href="#clrDoc">Clear Document</a></li>
+              <li><a href="#clrCom">Clear Output</a></li>
+
+            </ul>
+          </li>
+        <li class="menu-has-children"><a></a>
+            <ul>
+              <li><a href="#drop-down-1">FAQ</a></li>
+              <li><a href="#drop-down-2">FEEDBACK</a></li>
+
+            </ul>
+          </li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+
+    <div class="intro-content">
+	<!--<div class="title-1">
+ <h1>ANALYSIS YOUR<br/></br/>DATA</h1>
+
+<!-- <a target="_blank" href="http://codepen.io/Moslim/" class="white-mode">OTHER PENS</a>
+</div>-->
+	<div class="w3-container">
+
+
+     <div class="animated-title">
+  <div class="text-top">
+    <div></br></br></br></br>
+      <span>ANALYZE YOUR</span>
+      
+    </div>
+  </div>
+  <div class="text-bottom">
+    <div>DATA </div>
+
+  </div>
+
+</div>
+
+    </div>
+
+  </section><!-- End Intro Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+	    <div class="section-header">
+        <h2>ANALYSIS</h2></br>
+        </div>
+        </div>
+
+	    <div class="wrap" id="wrap">
+	     <!--      <a href="{{ url_for('upload_dictionary') }}" class="btn-get-started scrollto">ANALYSIS</a>-->
+	  
+        {% if title == 'Index' %}
+<div class="container3">
+        <a id="home_analysis_btn" href="{{ url_for('upload_dictionary') }}">
+          <button class="btn">ANALYSIS</button><br/><br/>
+        </a>
+</div>
+            <style>
+.container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+a {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+}
+
+.btn {
+    height: 20%;
+    width: 400Px;
+    border: 4px solid rgb(80 216 175);
+    position: relative;
+    overflow: hidden;
+    font-size: 30px;
+    border-radius: 50% 50%;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 120deg, transparent, #50d8af, rgba(0,0,0,.1) );
+    transition: all 600ms;
+}
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+            </style>
+        {% endif %}
+
+        {% if title == 'upload' %}
+          {%  extends 'upload_dictionary.html' %}
+        {% endif %} 
+
+        {% if title == 'radio' %}
+          {%  extends 'radio.html' %}
+        {% endif %}
+
+        {% if title == 'upload_file' %}
+          {%  extends 'upload_file.html' %}
+        {% endif %}
+      </div>
+    </section><!-- End About Section -->
+  </br>
+{% block bodyservice %}
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+        </br>    <h2>TECHNOLOGY</h2></br>
+
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <h4 class="title"><a href="">BERT MODEL</a></h4>
+              <p class="description"></p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="fa fa-picture-o"></i></div>
+              <h4 class="title"><a href="">DEEP LEARNING</a></h4>
+              <p class="description"></p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
+              <h4 class="title"><a href="">PYTHON</a></h4>
+              <p class="description"></p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-map"></i></div>
+              <h4 class="title"><a href="">SENTIMENTAL ANALYSIS</a></h4>
+              <p class="description"></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section --> 
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>DEMO</h2>
+       
+        </div>
+          <video width="800" height="400" controls>
+  <source src="../static/images/Overview.mp4" type="video/mp4">
+Your browser does not support the video tag
+</video>
+        
+      </div>
+    </section><!-- End Clients Section -->
+	</br></br></br></br></br></br></br></br>
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>ABOUT US</h2>
+
+          <p>VOXPopuli can pull data from different languages, contexts, formats, and forums to make sense of it all for you. VOXPopuli mines customer data and keeps track of how your products are doing.
+
+          Your team can analyse data easily and see what customers are saying about your product and the intent behind their feedback.
+          </p>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+
+          <div class="testimonial-item">
+            <p>
+              <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
+			  VOXPopuli liberates data everyday to enable the world to make the most informed decisions. A world where anything can interact with anything. VOXPopuli delivers a platform that gives insights on customer sentiment over a product and enables to flow freely everywhere.
+              <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+
+            <img src="../static/images/S1.jpg" class="testimonial-img" alt="">
+            <h3>Our Story</h3>
+            
+          </div>
+
+          <div class="testimonial-item">
+            <p>
+              <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Change the way you process your feedback through the introduction of sentiment analysis. Helping you gain a new insight into your data.The process of identifying opinions expressed in a piece of text, especially in order to determine positive, neutral, and negative consistencies.
+
+              <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+            <img src="../static/images/S2.jpg" class="testimonial-img" alt="">
+            <h3>Our Vision</h3>
+
+          </div>
+
+         <div class="testimonial-item">
+            <p>
+              <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+            <img src="../static/images/S3.png" class="testimonial-img" alt="">
+            <h3>Our Technology</h3>
+         
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+     <!-- ======= Document Clear ======= -->
+<section id="clrDoc" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Clear the directory of Uploaded Document File</h2>
+      <p>This panel enable you to clear uploaded temporary files and clearing application spaace</p></br></br></br></br>
+    </div>
+     <a id="clear_doc_btns" href="{{ url_for('clear_doc') }}">
+      <button class="button">Remove Document</button><br/><br/><br/><br/>
+    </a>
+     <h3>{{ msg }}</h3>
+  </div>
+</section>
+
+<!-- ======= Document Clear ======= -->
+<section id="clrCom" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Clear the directory of Generated Output File</h2>
+      <p>This panel enable you to clear uploaded temporary files and clearing application spaace</p></br></br></br></br>
+    </div>
+     <a id="clear_com_btns" href="{{ url_for('clear_com') }}">
+      <button class="button">Remove Outputs</button><br/><br/><br/><br/>
+    </a>
+    <h3>{{ msgo }}</h3>
+  </div>
+</section>
+    <!-- ======= FAQ ======= -->
+<section id="drop-down-1" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>FAQ</h2>
+    </div>
+
+    <h4>	How to select my own Dictionary file?</h4>
+    <p>Click the analysis button to start your analysis, you’ll be asked to either select the existing dictionary file or to drop your own dictionary file. Once you select the button to drop your own dictionary file, you will be asked to upload your dictionary file from your local machine.</p>
+
+    <h4>	What is a Dictionary file?</h4>
+    <p>A dictionary file contains domains and subdomains with respect to the fields such as hospitals, student etc. With the help of this file, analysis will be done.</p>
+
+    <h4>	Do we get to select our own comment file?</h4>
+    <p>Yes, you can select your own comment file
+
+    <h4>	Will be able to see all the domains before I select them for analysis?</h4>
+    <p>Yes, after dropping your dictionary file, you will be given two options. Either to select all the existing domains, or to show all the domains. You can click on “no” option to display all domains.</p>
+
+    <h4>	How is the result generated?</h4>
+    <p>The result is generated in a form of bar graph, where purple shows positive feedback and lavender shows negative feedback. You can hover your mouse on the bars, to see the respective field in line graph.</p>
+
+
+    <h4>	If I want to analyse the data for only two domains will I be able to do it?</h4>
+    <p>After the analysis, you will find an option to apply the filter to select domains for which you want to carry the analysis.</p>
+
+    <h4>	Is there an option to download the output? If yes, how to download it?</h4>
+    <p>In the results page, you will find an option to download output, once you click on that, the output will be automatically downloaded in a form of an excel sheet.</p>
+
+    <h4>	Whom should I contact for general enquiries?</h4>
+    <p>There is a contact us section in the home page, you can either email us or contact us through the number given.</p>
+
+	</div>
+</section>
+    <section id="drop-down-2" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>FEEDBACK</h2>
+
+
+  <form method="post" autocomplete="off" id="feedback" name="google-sheet">
+      <h4>We'd love to hear what you think about VOXPopuli, our product and service. If you have experienced
+          any problems with our service or if you think we did a great job we'd love to hear from you. Please
+          fill out the online feedback form below.
+      </h4>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label for="email">Mail Id</label>
+          </div>
+          <div class="col-75">
+            <input type="email" id="email" name="mailid" placeholder="Your mail id.." required>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Country</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country">
+              <option value="none">Select Country</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="russia">Russia</option>
+            <option value="japan">Japan</option>
+            <option value="india">India</option>
+            <option value="china">China</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+          <label for="feed_back">Comment</label>
+        </div>
+        <div class="col-75">
+          <textarea id="comment" name="comment" placeholder="Comment.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label>How do you rate your overall experience?</label>
+              <p>
+                  <lable class="radio-inline">
+                      <input type="radio" name="experience" id="radio_experience"
+                      value="good">
+
+                                           Good
+
+                  </lable>
+                  <lable class="radio-inline">
+                      <input type="radio" name="experience" id="radio_experience"
+                      value="average">
+
+                                           Average
+
+                  </lable>
+                  <lable class="radio-inline">
+                      <input type="radio" name="experience" id="radio_experience"
+                      value="bad">
+
+                                           Bad
+
+                  </lable>
+              </p>
+          </div>
+      </div>
+      <div class="row">
+        <input type="submit" value="Submit" id="btn_s">
+      </div>
+    </form>
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwfcFMXubPW5AU9qVelQtDwdW7pV9CYMf2Vno3AtG0czJuDG1HO/exec'
+    const form = document.forms['google-sheet']
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+        </div>
+		</div>
+    </section>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p></p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>BURWOOD DEAKIN, VIC</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">*******</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">VOXPOPULIT22020@GMAIL.COM</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>VOXPOPULI</strong>. All Rights Reserved
+      </div>
+     
+    </div>
+  </footer><!-- End Footer -->
+{% endblock bodyservice %}
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor1/jquery/jquery.min.js"></script>
+  <script src="../static/vendor1/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor1/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor1/php-email-form/validate.js"></script>
+  <script src="../static/vendor1/wow/wow.min.js"></script>
+  <script src="../static/vendor1/venobox/venobox.min.js"></script>
+  <script src="../static/vendor1/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../static/vendor1/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/vendor1/superfish/superfish.min.js"></script>
+  <script src="../static/vendor1/hoverIntent/hoverIntent.js"></script>
+  <script src="../static/vendor1/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main1.js"></script>
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}</style>
+</body>
+
+</html>

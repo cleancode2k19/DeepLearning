@@ -1,0 +1,73 @@
+
+{%  extends 'layout.html' %}
+{% block PageHeading %}
+                <a href='{{ url_for("Index") }}'>
+<div> <h3> << Dictionary File</h3></div></br></div>
+                </a>
+{% endblock PageHeading %}
+{% block PageContent %}
+
+  <div class="main-content">
+   
+    <div class="section__content section__content--p30">
+      <div class="item">
+        <form id="form-shower" method="POST" action="{{ url_for('dictionary_uploader') }}" name="checkMarkAssert" enctype="multipart/form-data">
+          {% if asr and asr>0 %}
+            <h2> Choose Dictionary File</h2>
+              <label class="cnt">
+            <input type="checkbox" id="yesti" value="Yes" name="myselect" onclick="showMe('Yes')" />
+            <span class="checkmark"></span>
+            </label><br/>
+          {% endif %}
+          <h2> Drop your own Dictionary File </h2>
+          <label class="cnt">
+            <input type="checkbox" id="noti" value="No" name="myselect" onclick="showMe('No')" />
+            <span class="checkmark"></span>
+          </label>
+        </form>
+        <form name="Yes" method="POST" action= "{{ url_for('dictionary_uploader') }}" enctype="multipart/form-data" id="Yes" style="display:none">
+            <label for="Dictionary">Choose a Dictionary:</label>
+            <select style="width:100%" name="Dictionary" id="cars">
+                {% for i in range(asr) %}
+                    <option value="{{ onlyfiles[i] }}">{{ onlyfiles[i] }} </option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input class="btn-get" type="submit" value="Submit"/>
+        </form>
+
+
+        <form method="POST" action= "{{ url_for('dictionary_uploader') }}" enctype="multipart/form-data" id="No" style="display:none">
+
+          <input type="file"  name="file" autocomplete="off" accept=".xls,.xlsx" required />
+
+          <div class="item2">
+            <input class="btn-get-started scrollto" type="submit" value="Upload" />
+          </br>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+<script src="../static/vendor1/jquery/jquery.min.js"></script>
+<script src="../static/js/upload_dictionary.js"></script>
+<!-- dont remove -->
+<style>
+    input[type=submit] {
+    background-color: rgb(12, 46, 138);
+    color: white;
+
+    font-size: 20px;
+    margin-left: 20%;
+    border: none;
+    width: 20%;
+    border-radius: 30px;
+    cursor: pointer;
+
+    float: left;
+}
+</style>
+<!-- END MAIN CONTENT-->
+{% endblock PageContent %}
+
